@@ -239,7 +239,7 @@
 		                    returnData.recordsTotal = list.length;//返回数据全部记录
 		                    returnData.recordsFiltered = list.length;//后台不实现过滤功能，每次查询均视作全部结果
 						} else {
-							$("#blockHeight").text(result.total)-1;
+							$("#blockHeight").text(result.total-1);
 		                    returnData.recordsTotal = result.total;//返回数据全部记录
 		                    returnData.recordsFiltered = result.total;//后台不实现过滤功能，每次查询均视作全部结果
 		                    returnData.data = result.rows;//返回的数据列表
