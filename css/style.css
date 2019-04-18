@@ -1,0 +1,155 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    outline: none;
+    color: #ffffff;
+    font-size: 14px;
+}
+.body {
+    background:url("../images/body-bg.gif") no-repeat;
+    width:100%;
+    height:100%;
+    background-size:100% 100%;
+    position:absolute;
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='body-bg.gif',sizingMethod='scale');
+}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+.d-n{display: none}
+canvas {
+    display: block;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+.f-l{float: left}
+.f-r{float: right}
+.header{
+    height:110px;
+    width:90%;
+    margin:0 auto;
+}
+.header-left,
+.header-right{
+    width:20%
+}
+.header-center{
+    width:60%;
+    text-align: center;
+    font-size: 36px;
+    line-height: 110px;
+}
+
+/*企业征信*/
+.container-enterprise{
+    width:80%;
+    margin:0 auto;
+}
+.enterpriseTitle{
+    position: absolute;
+    padding: 10px;
+    color: #69C6FF;
+    font-size: 24px;
+}
+.enterpriseDetail{
+    position: absolute;
+    top: 20%;
+    width: 72%;
+    right: 10px;;
+
+}
+.enterpriseDetail table td{
+    padding:8px 15px;
+}
+.td-color{
+    color: #afbccc;
+}
+
+/*menu*/
+.index-menu{
+    position: absolute;
+    width: 840px;
+    height:360px;
+    top:50%;
+    left:50%;
+    margin-top:-160px;
+    margin-left: -420px;
+}
+.index-menu a{
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    color:#ffffff;
+    cursor:pointer;
+    padding:18px;
+}
+.qyzx{
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    text-align: center;
+    border: none;
+    position: absolute;
+    top: 47px;
+    left: 239px;
+}
+.ydcp{
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    text-align: center;
+    border: solid 1px rgba(99, 207, 243, 0.55);;
+    position: absolute;
+    top: 232px;
+    left: 210px;
+}
+.dsj{
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    text-align: center;
+    border: solid 1px #439871;
+    position: absolute;
+    line-height: 60px;
+    top: 40px;
+    left: 536px;
+}
+.qkl{
+    height: 90px;
+    width: 90px;
+    border-radius: 100%;
+    text-align: center;
+    border: solid 1px #74AAE0;
+    position: absolute;
+    line-height:60px;
+    top: 213px;
+    left: 565px;
+}
+.sun{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    margin-left: -122px;
+    width: 432px;
+    height: 520px;
+    background: transparent url('../images/menu/sun.png') no-repeat
+}
+
+.tip-menu{
+   position: absolute;
+   top:105px;
+   left:280px;
+   width:220px;
+   height:70px
+}
+
+
+
+

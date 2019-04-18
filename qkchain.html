@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>区块链</title>
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chain/reset.css" />
+    <link rel="stylesheet" href="css/chain/case-style.css" />
+    <link rel="stylesheet" href="css/chain/default_skin.css" />
+    <link type="text/css" rel="stylesheet" href="css/animate.css">
+
+    <script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="js/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="js/starbg.js"></script>
+    <script type="text/javascript" src="js/qkchain/jquery.cycle2.min.js"></script>
+    <script src="js/qkchain/jquery.sky.carousel-1.0.2.min.js"></script>
+    <script src="js/qkchain/lib.js"></script>
+    <script src="js/qkchain/scripts.js"></script>
+    
+    <style>
+
+
+    </style>
+    <script type="text/javascript">
+      /*  $(document).ready(function() {
+            var $windowH=$(window).height();
+           $("#external-frame").height($windowH-150);
+            window.onresize = function(){
+                var $windowH=$(window).height();
+                $("#external-frame").height($windowH-150);
+            }
+        });*/
+
+
+
+    </script>
+    <script type="text/javascript">
+        $(function () {
+
+            buildSideNav();
+
+            skyCarousel = $('#character-slider').carousel({
+                itemWidth: 528,
+                itemHeight: 512,
+                enableMouseWheel: false,
+                gradientOverlayVisible: true,
+                gradientOverlayColor: '#F0F3EE',
+                gradientOverlaySize: 300,
+                distance: 30,
+                selectedItemDistance: 80,
+                selectByClick: true,
+                selectedItemZoomFactor: 0.8,
+                unselectedItemZoomFactor: 0.4,
+                navigationButtonsVisible: false,
+                showPreloader: false,
+                autoSlideshow: true
+            })
+
+        })
+
+    </script>
+
+</head>
+<body class="body">
+   <canvas id="fullstarbg" >你的浏览器不支持canvas标签</canvas>
+   <div class="header" >
+       <div class="header-left f-l" >
+           <a href="index.html" id="homeBtn-id" class="home-btn f-l animated fadeInDown" style="padding-top:20px">
+               <img src="images/home-btn.png">
+           </a>
+       </div>
+       <div class="header-center f-l" style="padding-top: 20px" >
+           <!--<span>贵阳高科&nbsp;&nbsp;●&nbsp;&nbsp;融信平台</span>-->
+           <img id="enterpriseTitle-nav" src="images/enterprise-title4.png" width="100%" class="animated flipInX ">
+       </div>
+      <!-- <div class="header-right f-r" >
+           <a href="javascript :;" onClick="javascript :history.back(-1);" class="home-btn f-r  animated fadeInDown" style="padding-top:20px">
+               <img src="images/back-btn.png">
+           </a>
+       </div>-->
+   </div>
+     <div class="clearfix" ></div>
+   <p class="fadeInUp animated" style="width:800px;margin: 0 auto;color:#ffffff;font-size: 16px;text-align: center;line-height: 2.2">区块链是一种新兴的<span style="color:#FFCE42;font-size: 20px">互联网数据库</span>技术，通过它可极高效地完成交易，从而简化业务流程、<br>节约成本并减小欺诈的可
+       能性，从根本上改变对于交换价值和资产、实施合同以及跨行业共享数据的思考方式
+   </p>
+   <div class="fadeInUp animated" style="text-align: center;padding: 10px 0 0 0">
+      <img src="images/qkchain/qkchain-line.png" >
+   </div>
+   <div class="fadeInUp animated" style="width: 800px;height:300px;margin: 0 auto;margin-top:-12px;background:transparent url('images/qkchain/chain-img-bg.png')">
+       <div id="site-wrapper">
+           <section id="section-header" data-coloroverlap="dark"></section>
+           <section id="second-phase" class="phase-row" data-title="Illustrations" data-coloroverlap="light">
+               <div class="shell">
+                   <div class="second-row">
+                       <article>
+                           <div id="character-slider" class="sky-carousel sc-no-select" style="visibility: visible;">
+                               <div class="sky-carousel-wrapper" style="visibility: visible; opacity: 1;">
+                                   <ul class="sky-carousel-container" style="margin-top: -21.2px; left: -1552.4px; transition: left 0.45s ease-out; -webkit-transition: left 0.45s ease-out;">
+                                       <li style="transform-origin: center 256px 0px; transform: translate(0px, 0px) scale(0.4) translateZ(0px); opacity: 0.6; z-index: 10;" class="">
+                                          <a href="pages/qkl-transaction.html">
+                                              <img src="images/qkchain/chain-img/one1.jpg" alt="" class="sc-image">
+                                          </a>
+                                           <div class="sc-content">
+
+                                           </div>
+                                       </li>
+                                       <li style="transform-origin: center 256px 0px; transform: translate(241.2px, 0px) scale(0.4) translateZ(0px); opacity: 0.6; z-index: 8;" class="">
+                                           <a href="pages/qkl-transaction-2.html">
+                                              <img src="images/qkchain/chain-img/one2.jpg" alt="" class="sc-image">
+                                           </a>
+                                               <div class="sc-content">
+
+                                           </div>
+                                       </li>
+                                       <li style="transform-origin: center 256px 0px; transform: translate(482.4px, 0px) scale(0.4) translateZ(0px); opacity: 0.6; z-index: 8;" class="">
+                                           <a href="pages/qkl-transaction-3.html">
+                                              <img src="images/qkchain/chain-img/one3.jpg" alt="" class="sc-image">
+                                           </a>
+                                           <div class="sc-content">
+
+                                           </div>
+                                       </li>
+                                       <li style="transform-origin: center 256px 0px; transform: translate(723.6px, 0px) scale(0.4) translateZ(0px); opacity: 0.6; z-index: 9;" class="">
+                                           <a href="pages/qkl-transaction-4.html">
+                                              <img src="images/qkchain/chain-img/one4.jpg" alt="" class="sc-image">
+                                           </a>
+                                               <div class="sc-content">
+
+                                           </div>
+                                       </li>
+                                       <li style="transform-origin: center 256px 0px; transform: translate(964.8px, 0px) scale(0.4) translateZ(0px); opacity: 0.6; z-index: 8;" class="">
+                                           <a href="pages/qkl-transaction-5.html">
+                                              <img src="images/qkchain/chain-img/one5.jpg" alt="" class="sc-image">
+                                           </a>
+                                               <div class="sc-content">
+
+                                           </div>
+                                       </li>
+
+                                   </ul>
+                               </div>
+                               <div class="sc-content-wrapper">
+                                   <div class="sc-content-container" style="visibility: visible; opacity: 1;">
+                                       <div class="sc-content"></div>
+                                   </div>
+                               </div>
+                           </div>
+                       </article>
+                   </div>
+               </div>
+           </section>
+       </div>
+   </div>
+</body>
+</html>

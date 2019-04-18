@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title>首页</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"	content="width=device-width, initial-scale=1,maximum-scale=1.0, user-scalable=0,user-scalable=no">
+	<link rel="stylesheet" href="subs/css/amazeui.css"/>
+	<link rel="stylesheet" href="subs/css/style.css"/>
+	<meta property="og:image:type" content="image/png">
+	<meta property="og:image:width" content="1400">
+	<meta property="og:image:height" content="873">
+	<link rel="stylesheet" href="qklbrowse/datatables/datatables.min.css" />
+	<link rel="stylesheet" href="qklbrowse/css/qklbrowse.css">
+	<script src="js/jquery-1.11.2.min.js" ></script>
+	<script src="qklbrowse/datatables/datatables.min.js" ></script>
+
+</head>
+<body>
+<header class="am-topbar header">
+	<div class="am-container-1">
+		<div class="left hw-logo">
+		    <img class=" logo" src="subs/img/logo.png">
+        </div>
+	    <div class="am-collapse am-topbar-collapse right" id="doc-topbar-collapse">
+			<div class=" am-topbar-left am-form-inline am-topbar-right" role="search">
+				  <ul class="am-nav am-nav-pills am-topbar-nav hw-menu">
+						  <li><a href="index.html">首页</a></li>
+						 <!-- <li ><a href="qkchain.html"> 产品信息</a></li>-->
+						  <li  class="hw-menu-active"><a target="_blank" href="qklbrowse1.html"> 区块链浏览器 </a></li>
+				  </ul>
+			</div>
+	   </div>
+  </div>
+</header>
+<div id="universe"></div>
+<div class="chainContent" >
+	<div class="item">
+		 <ul>
+			 <li><img src="images/browse/dqjds.png" ></li>
+			 <li>
+				 <p>当前节点数</p>
+				 <span style="color:#DD5145" id="currentPeers"> </span>
+			 </li>
+		 </ul>
+	</div>
+	<div class="item">
+		<ul>
+			<li><img src="images/browse/qkgd.png" ></li>
+			<li>
+				<p>区块高度</p>
+				<span style="color:#5A86D7" id="blockHeight"> </span>
+			</li>
+		</ul>
+	</div>
+	<div class="item">
+		<ul>
+			<li><img src="images/browse/znhys.png" ></li>
+			<li>
+				<p>智能合约数</p>
+				<span style="color:#5993D9" id="smartNums"> </span>
+			</li>
+		</ul>
+	</div>
+	<div class="item">
+		<ul>
+			<li><img src="images/browse/yxzt.png" ></li>
+			<li>
+				<p>运行状态</p>
+				<span style="color:#DD5145" id="status" > </span>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="qklContent">
+	<div>
+		<span >区块高度：</span>
+		<input type="text" class="inputContent"   />
+		<input type="button" value="搜索"  class="searchBtn"  />
+		<input type="button" value="重置"  class="reserBtn"  />
+	</div>
+	<div>
+		<table id="qkheight" class="display" style="width:100%;margin-top:20px;margin-bottom:50px">
+			<thead>
+				<tr>
+					<th>区块高度</th>
+					<th>区块Hash</th>
+					<th>交易笔数</th>
+					<th>生成时间</th>
+					<th>区块大小(byte)</th>
+				</tr>
+			</thead>
+			<!-- <tfoot>
+				<tr>
+					<th>区块高度</th>
+					<th>当前区块hash</th>
+					<th>交易笔数</th>
+					<th>日期</th>
+					<th>大小</th>
+				</tr>
+			</tfoot> -->
+		</table>
+	</div>
+</div>
+<footer class="footer ">
+	<ul>
+		<li class="am-u-lg-4 am-u-md-4 am-u-sm-12 part-5-li2">
+			<div class="part-5-title">联系我们</div>
+			<div class="part-5-words2">
+				<span>@ <a target="_blank" href="mailto:ir@vteamsystem.com" >联系我们</a></span>
+			</div>
+		</li>
+		<li class="am-u-lg-4 am-u-md-4 am-u-sm-12 ">
+			<div class="part-5-title">相关链接</div>
+			<div class="part-5-words2">
+				<ul class="part-5-words2-ul">
+					<li >
+						<a target="_blank" href="http://www.vteamgroup.com.cn/page.php?cid=10">关于我们</a>
+					</li>
+					<!-- <li ><a href="qkchain.html">产品信息</a></li>-->
+					<li ><a target="_blank" href="http://111.85.152.86:8321/baas/baas/pages/index.html"> 区块链浏览器 </a></li>
+					<div class="clear"> </div>
+				</ul>
+			</div>
+		</li>
+		<li class="am-u-lg-4 am-u-md-4 am-u-sm-12 ">
+			<img src="images/ty.jpg" style="width:30%;float: right">
+		</li>
+		<div class="clear"> </div>
+	</ul>
+</footer>
+<script src='qklbrowse/js/three.min.js'></script>
+<script src="qklbrowse/js/index.js"></script>
+<script type="text/javascript">
+	//baas服务器地址
+	var serviceAddress = "http://192.168.122.95:7020/baas";
+	loadChannelInfo();
+	//查询所有块
+	loadBlockInfo();
+	//重置按钮事件
+	$(".reserBtn").click(function(){
+		$(".inputContent").val("");
+		$("#qkheight").dataTable().fnClearTable() ;//清理原数据
+		$("#qkheight").dataTable()._fnAjaxUpdate();
+	});
+	//搜索按钮，指定块高度查询块信息
+	$(".searchBtn").click(function(){
+		$("#qkheight").dataTable()._fnAjaxUpdate();
+		// var height = $(".inputContent").val();
+		// if(height==""){
+			// $("#qkheight").dataTable().fnClearTable() ;//清理原数据
+			// $("#qkheight").dataTable()._fnAjaxUpdate();
+			// return;
+		// }
+	});
+	//查询所有块信息
+	function loadBlockInfo(){
+		$('#qkheight').DataTable({
+			//	"searching" : false, //去掉搜索框方法一
+			"bFilter": false,   //去掉搜索框方法二
+			"bSort": false,  //禁止排序
+			"serverSide": true,
+			"lengthChange": true,
+			"lengthMenu": [25,50,100],
+
+			//"paging": false,   //禁止分页
+			"info": false ,  //去掉底部文字
+			"dom": '<f<t>lp>',
+			"language": {
+				"processing": '<div class="panel-overlay-content unselectable"><span class="panel-overlay-icon text-dark"><i class="fa fa-spinner fa-2x fa-spin"></i></span><h4 class="panel-overlay-title">数据加载中...</h4></div>',
+				"lengthMenu": "显示 _MENU_ 项结果",
+				"zeroRecords": "没有匹配结果",
+				"info": "显示第 _START_ 至 _END_ 项结果，共 _TOTAL_ 项",
+				"infoEmpty": "显示第 0 至 0 项结果，共 0 项",
+				"infoFiltered": "(由 _MAX_ 项结果过滤)",
+				"infoPostFix": "",
+				"search": "搜索:",
+				"searchPlaceholder": "搜索...",
+				"url": "",
+				"emptyTable": "暂无数据",
+				"loadingRecords": "载入中...",
+				"infoThousands": ",",
+				"paginate": {
+					"first": "首页",
+					"previous": "上页",
+					"next": "下页",
+					"last": "末页"
+				},
+				"aria": {
+					paginate: {
+						first: '首页',
+						previous: '上页',
+						next: '下页',
+						last: '末页'
+					},
+					"sortAscending": ": 以升序排列此列",
+					"sortDescending": ": 以降序排列此列"
+				},
+				"decimal": "-",
+				"thousands": ","
+
+			} ,
+
+			"ajax": function(data, callback, settings){
+				//封装请求参数
+                var pages = {};
+                pages.limit = data.length;//页面显示记录条数，在页面显示每页显示多少项的时候
+                pages.start = data.start;//开始的记录序号
+                pages.page = (data.start / data.length)+1;//当前页码
+                var height = $(".inputContent").val();
+                var url = serviceAddress + "/baas/FabricChannelInfoQueryServlet";
+                var param =  {};
+                if(height != ""){
+                	url = serviceAddress+"/baas/FabricQueryServlet";
+                	param.chainCodeParams="{\"chainName\":\"foo\",\"name\":\"scfs_chaincode\"}";
+					param.blockNumber=height;
+                } else {
+                	url = serviceAddress + "/baas/FabricChannelInfoQueryServlet";
+                	param.channelName="foo";
+                	param.pageNumber=pages.page;
+                	param.pageSize=pages.limit;
+                }
+				$.ajax({
+					url: url,
+					type: "POST",
+					dataType: "json",
+					data: param,
+					success: function (result) {
+						 var returnData = {};
+	                    returnData.draw = data.draw;//这里直接自行返回了draw计数器,应该由后台返回
+	                    //console.log(returnData);
+	                    //调用DataTables提供的callback方法，代表数据已封装完成并传回DataTables进行渲染
+	                    //此时的数据需确保正确无误，异常判断应在执行此回调前自行处理完毕
+						//// return json.rows;
+						if(height != ""){
+							var list =  new Array();
+							list.push(result);
+		                    returnData.data = list;//返回的数据列表
+		                    returnData.recordsTotal = list.length;//返回数据全部记录
+		                    returnData.recordsFiltered = list.length;//后台不实现过滤功能，每次查询均视作全部结果
+						} else {
+							$("#blockHeight").text(result.total)-1;
+		                    returnData.recordsTotal = result.total;//返回数据全部记录
+		                    returnData.recordsFiltered = result.total;//后台不实现过滤功能，每次查询均视作全部结果
+		                    returnData.data = result.rows;//返回的数据列表
+						}
+                    	callback(returnData);
+					}
+				});
+			},
+			"columns": [
+				{ "data": "blockNumber" },
+				{ "data": "currentBlockHash" },
+				{ "data": "transactions" ,
+				 render : function(val){
+				 	return val.length;
+				 }},
+				{"data": "timestamp",
+				 render: function(val) { 
+					var date = new Date(val); 
+					var o = date.format("yyyy-MM-dd hh:mm:ss");
+					return o;
+					}
+				},
+				{ data: "size" }
+				/*{ "data": "start_date" },
+				 { "data": "salary" }*/
+			]
+		});
+	}
+	//查询channel信息
+	function loadChannelInfo(){
+		//channel个数
+		$.ajax({
+			url: serviceAddress+"/baas/FabricChannelInfoQueryServlet",
+			type:"POST",
+			dataType:"json",
+			data : {
+			},
+			success:function(data, textStatus, jqXHR){
+				$("#currentPeers").text(data[0].size+5);
+				$("#smartNums").text(data[0].instantiatedSmartContractSize);
+				$("#status").text("正常");
+			}   ,
+			complete:function(data){
+				console.log(data);
+			}
+		});
+	}
+	//扩展jquery date类型format方法
+	Date.prototype.format = function(format) { 
+		var o = { 
+			"M+" : this.getMonth() + 1, // month 
+			"d+" : this.getDate(), // day 
+			"h+" : this.getHours(), // hour 
+			"m+" : this.getMinutes(), // minute 
+			"s+" : this.getSeconds(), // second 
+			"q+" : Math.floor((this.getMonth() + 3) / 3), // quarter 
+			"S" : this.getMilliseconds() 
+		};
+		if (/(y+)/.test(format)) { 
+			format = format.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length)); 
+		} 
+		
+		for (var k in o) { 
+			if (new RegExp("(" + k + ")").test(format)) { 
+				format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k] : ("00" + o[k]).substr(("" + o[k]).length)); 
+			} 
+		} 
+		return format; 
+	};
+</script>
+</body>
+</html>

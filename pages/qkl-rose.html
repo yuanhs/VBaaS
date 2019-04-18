@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths">
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>区块链</title>
+    <link type="text/css" rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/chain/reset.css" />
+    <link rel="stylesheet" href="../css/chain/case-style.css" />
+    <link rel="stylesheet" href="../css/chain/default_skin.css" />
+    <link type="text/css" rel="stylesheet" href="../css/animate.css">
+    <link rel="stylesheet" href="../css/chain/grumble.min.css">
+
+
+    <script type="text/javascript" src="../js/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="../js/modernizr-2.6.2.min.js"></script>
+    <script type="text/javascript" src="../js/starbg.js"></script>
+    <script src="../js/qkchain/jquery.grumble.min.js"></script>
+
+
+    <style>
+        #zjf-content,
+        #jrjg-content,
+        #pjjg-content,
+        #zcf-content,
+        #ls-content,
+        #js-content{width:500px;height: 300px;font-size: 14px;background: #ffffff;text-align: center;padding: 10px 0;text-align: left;display: none;}
+
+    </style>
+    <script type="text/javascript">
+
+       $(function(){
+           /*
+            $("#zjf").click(function(){
+            $('<div id="zjf-content"><p>快速、简便、可信任的中小企业融资平台，平台提供在线申请、审核、快速核贷业务服务。</p></div>').layerModel({
+            title:'资金方',
+            locked : false,
+            timer : 10000
+            });
+            });
+            $("#jrjg").click(function(){
+            $('<div id="jrjg-content"><p>平台持有者不一定是银行，也可能是金融科技公司，向此平台取得服务者收取，包含：融资需求、银行（资金提供者，不一定是银行）、广告费收入、其他可以延伸的服务，如应收账款、信贷、股票质借、放贷、保险质借。</p></div>').layerModel({
+            title:'金融机构',
+            locked : false
+            });
+            });
+            $("#pjjg").click(function(){
+            $('<div id="pjjg-content"><p>这是自定义弹出内容!通过弹出层弹出来</p></div>').layerModel({
+            title:'评级机构',
+            locked : false
+            });
+            });
+
+            });*/
+           $('#zjf').click(function(e){
+               var $me = $(this), interval;
+               e.preventDefault();
+               $me.grumble(
+                       {
+                           angle: 280,
+                           distance: 50,
+                           text: '追踪应收账款价值后续流向',
+                           type: 'alt-',
+                           hideOnClick: true
+                       }
+               );
+           });
+           $('#jrjg').click(function(e){
+               var $me = $(this), interval;
+               e.preventDefault();
+               $me.grumble(
+                       {
+                           angle: 270,
+                           distance: 50,
+                           text: '利用数字账本来追踪记录保护应收票据价值',
+                           type: 'alt-',
+                           hideOnClick: true
+                       }
+               );
+           });
+           $('#pjjg').click(function(e){
+               var $me = $(this), interval;
+               e.preventDefault();
+               $me.grumble(
+                       {
+                           angle: 265,
+                           distance: 50,
+                           text: '标准化评分评级模型',
+                           type: 'alt-',
+                           hideOnClick: true
+                       }
+               );
+           });
+           $('#zcf').click(function(e){
+               var $me = $(this), interval;
+               e.preventDefault();
+               $me.grumble(
+                       {
+                           angle: 75,
+                           distance: 50,
+                           text: '在线申请、审核、快速核贷业务服务',
+                           type: 'alt-',
+                           hideOnClick: true
+                       }
+               );
+           });
+           $('#ls').click(function(e){
+               var $me = $(this), interval;
+               e.preventDefault();
+               $me.grumble(
+                       {
+                           angle: 90,
+                           distance: 50,
+                           text: '透过平台提供服务，获取收入',
+                           type: 'alt-',
+                           hideOnClick: true
+                       }
+               );
+           });
+           $('#js').click(function(e){
+               var $me = $(this), interval;
+               e.preventDefault();
+               $me.grumble(
+                       {
+                           angle: 95,
+                           distance: 50,
+                           text: '透过平台赚取利息',
+                           type: 'alt-',
+                           hideOnClick: true
+                       }
+               );
+           });
+       })
+
+    </script>
+
+
+</head>
+<body class="body">
+   <canvas id="fullstarbg" >你的浏览器不支持canvas标签</canvas>
+   <div class="header" >
+       <div class="header-left f-l" >
+           <a href="../index.html" id="homeBtn-id" class="home-btn f-l  animated fadeInDown" style="padding-top:20px">
+               <img src="../images/home-btn.png">
+           </a>
+       </div>
+       <div class="header-center f-l" style="padding-top: 20px" >
+           <!--<span>贵阳高科&nbsp;&nbsp;●&nbsp;&nbsp;融信平台</span>-->
+           <img id="enterpriseTitle-nav" src="../images/enterprise-title4.png" width="100%" class="animated flipInX">
+       </div>
+       <div class="header-right f-r" >
+           <a href="../qkchain.html"  class="home-btn f-r  animated fadeInDown" style="padding-top:20px">
+               <img src="../images/back-btn.png">
+           </a>
+       </div>
+   </div>
+
+   <div class="fadeInUp animated" style="width: 800px;height:500px;position:absolute;margin-left:-400px;left:50%;padding-top: 20px;text-align: center;margin-top:-12px;background:transparent url('../images/qkchain/chain-img-bg.png')">
+       <a  id="zjf"  style="display: block;position: absolute;height:70px;width:70px;top:30px;left:235px;"></a>
+       <a id="jrjg" style="display: block;position: absolute;height:70px;width:70px;top:185px;left:148px;"></a>
+       <a id="pjjg" style="display: block;position: absolute;height:70px;width:70px;top:330px;left:187px;"></a>
+       <a id="zcf" style="display: block;position: absolute;height:70px;width:70px;top:20px;left:505px;"></a>
+       <a id="ls" style="display: block;position: absolute;height:70px;width:70px;top:150px;left:582px;"></a>
+       <a id="js" style="display: block;position: absolute;height:70px;width:70px;top:318px;left:580px;"></a>
+       <img src="../images/qkchain/baaS.png" width="500px" >
+       <p style="color:#ffffff">参与角色展示图</p>
+   </div>
+
+</body>
+</html>

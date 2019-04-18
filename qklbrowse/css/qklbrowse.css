@@ -1,0 +1,98 @@
+html, body { 
+  height:100%; 
+  width:100%; 
+  margin:0; 
+  padding:0; 
+
+}
+#universe { 
+background:url('../img/body-bg.gif') left -50px ;
+  margin-top:80px;
+  height:490px;
+}
+
+canvas { 
+  width: 100%!important; height: 100%!important; 
+}
+.chainContent{
+  position: absolute;
+  height: 130px;
+  width: 1200px;
+  background-color: #fff;
+  box-shadow: 0 20px 30px -17px #223ac4;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  left: 50%;
+  margin: 0 auto 0 -600px;
+  margin-top: -100px
+}
+.chainContent .item{
+  width:298px;
+  float:left;
+  height:130px;
+}
+.chainContent .item ul li{
+  float: left;
+}
+.chainContent .item ul li img{
+  margin: 23px 15px 25px 30px;
+}
+.chainContent .item ul li p{
+  font-size: 14px;
+  margin-top:35px;
+  color:#777;
+}
+.chainContent .item ul li span{
+  font-size:20px;
+  line-height: 45px;
+}
+.inputContent{
+  height:30px;
+  width:300px;
+  padding:5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  border:solid 1px #cdcdcd;
+  outline: none
+}
+.searchBtn {
+  height: 30px;
+  color: #ffffff;
+  margin-left: 25px;
+  background-color: #56ADDE;
+  border: solid 1px #56ADDE;
+  outline: none;
+  border-radius: 5px;
+  padding: 0 15px
+}
+.searchBtn:hover{
+  background-color: #0f9ae0;
+}
+.reserBtn {
+  height: 30px;
+  border-radius: 5px;
+  border: solid 1px #DDDDDD;
+  outline: none;
+  padding: 0 15px
+}
+.reserBtn:hover{
+  background-color: #ccc
+}
+.qklContent{
+  margin:100px 80px 50px 80px;
+  font-size: 14px;
+}
+.qklContent div span{
+  float:left;
+  line-height:30px
+}
+
+table.dataTable thead th, table.dataTable thead td{
+  border-bottom: 1px solid #afafaf;
+}
+table.dataTable tfoot th, table.dataTable tfoot td{
+  border-top: 1px solid #afafaf;
+}
+table.dataTable.no-footer{
+  border-bottom: 1px solid #afafaf;
+}
