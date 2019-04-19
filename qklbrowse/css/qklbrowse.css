@@ -15,20 +15,20 @@ canvas {
   width: 100%!important; height: 100%!important; 
 }
 .chainContent{
-  position: absolute;
+ /* position: absolute;
   height: 130px;
-  width: 1200px;
+  width: 1200px;*/
   background-color: #fff;
   box-shadow: 0 20px 30px -17px #223ac4;
   border-radius: 5px;
   border: 1px solid #eee;
-  left: 50%;
-  margin: 0 auto 0 -600px;
+ /* left: 50%;
+  margin: 0 auto 0 -600px;     */
   margin-top: -100px
 }
 .chainContent .item{
-  width:298px;
-  float:left;
+ /* width:298px;
+  float:left;*/
   height:130px;
 }
 .chainContent .item ul li{
@@ -48,7 +48,6 @@ canvas {
 }
 .inputContent{
   height:30px;
-  width:300px;
   padding:5px 10px;
   font-size: 14px;
   border-radius: 5px;
@@ -58,7 +57,7 @@ canvas {
 .searchBtn {
   height: 30px;
   color: #ffffff;
-  margin-left: 25px;
+  margin-left: 70px;
   background-color: #56ADDE;
   border: solid 1px #56ADDE;
   outline: none;
@@ -79,7 +78,9 @@ canvas {
   background-color: #ccc
 }
 .qklContent{
-  margin:100px 80px 50px 80px;
+  margin: 0 auto;
+  width: 90%;
+  margin-top:50px ;
   font-size: 14px;
 }
 .qklContent div span{
@@ -89,10 +90,19 @@ canvas {
 
 table.dataTable thead th, table.dataTable thead td{
   border-bottom: 1px solid #afafaf;
+  white-space: nowrap;
 }
 table.dataTable tfoot th, table.dataTable tfoot td{
   border-top: 1px solid #afafaf;
 }
 table.dataTable.no-footer{
   border-bottom: 1px solid #afafaf;
+}
+
+
+@media (max-width: 768px) {
+  #universe {
+    height:290px;
+  }
+
 }
