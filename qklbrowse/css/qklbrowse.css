@@ -102,7 +102,9 @@ table.dataTable.no-footer{
 
 @media (max-width: 768px) {
   #universe {
-    height:290px;
+    height:190px;
   }
-
+  .chainContent{
+    margin-top: 0px;
+  }
 }
