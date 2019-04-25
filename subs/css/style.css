@@ -2011,3 +2011,9 @@ i.am-icon-tasks{ display: none;}
 	}
 	.news-ul li{ margin-top: 25px;}
 }
+.dataTables_length{
+	margin-top: 15px;
+}
+.dataTables_length label{
+	font-weight: normal;
+}
